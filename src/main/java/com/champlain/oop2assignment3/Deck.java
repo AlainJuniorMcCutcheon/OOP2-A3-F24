@@ -1,9 +1,6 @@
 package com.champlain.oop2assignment3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Represents a deck of playing cards.
@@ -55,5 +52,12 @@ public class Deck extends CardCollection implements CardSource {
      */
     public Iterator<Card> iterator() {
         return this.aCards.iterator();
+    }
+
+    /**
+     * Sorts the deck of cards by suit first, then by rank.
+     */
+    public void sortBySuit() {
+        this.aCards.sort(Comparator.comparing(Card::getSuit).thenComparing(Card::getRank));
     }
 }
