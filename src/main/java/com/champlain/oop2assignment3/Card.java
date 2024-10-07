@@ -53,4 +53,24 @@ public class Card {
     public String toString() {
         return this.getRank() + " of " + this.getSuit();
     }
+
+    @Override
+    public boolean equals(Object obj){
+        // not sure
+        if (this == obj){
+            return true;
+        }
+
+        // cast the object to a card type
+        Card card = (Card) obj;
+
+        // check weather the cards have matching aRank and aSuit
+        if (aRank == card.aRank && aSuit == card.aSuit){
+            throw new IllegalStateException("A card can't be the same as another card");
+        }
+
+        // Return false if it not equal
+        return false;
+    }
+
 }
